@@ -5,8 +5,8 @@
     header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization, X-Requested-With');
 
 
-    require_once '../../config/Database.php';
-    require_once '../../models/Post.php';
+    require_once '../config/Database.php';
+    require_once '../objects/Post.php';
 
     // Instantiate DB & connect
     $database = new Database();
