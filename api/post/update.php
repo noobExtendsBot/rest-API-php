@@ -17,14 +17,13 @@
 
     $post = new Post($db);
 
-    $post->id = isset($_GET['id'])? $_GET['id']: die();
-    
     // GET THE DATA FROM POST
     $data = json_decode(file_get_contents("php://input"));
     $post->title       = $data->title;
     $post->body        = $data->body;
     $post->category_id = $data->category_id;
     $post->author      = $data->author;
+    $post->id          = $data->id;
 
     if($post->update()) {
         echo json_encode(

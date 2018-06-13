@@ -4,7 +4,7 @@
     header('Access-Control-Allow-Methods: POST');
     header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization, X-Requested-With');
 
-
+    
     require_once '../config/Database.php';
     require_once '../objects/Post.php';
 
@@ -16,10 +16,10 @@
     $post = new Post($db);
 
     // GET raw posted data
-    $data = json_decode(file_get_contents("php://input"));
-    $post->title  = $data->title;
-    $post->body   = $data->body;
-    $post->author = $data->author;
+    $data              = json_decode(file_get_contents("php://input"));
+    $post->title       = $data->title;
+    $post->body        = $data->body;
+    $post->author      = $data->author;
     $post->category_id = $data->category_id;
 
     //Create post

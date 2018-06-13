@@ -7,7 +7,6 @@
         private $db_name  = 'new_blog';
         private $conn;
         
-
         // DB Connect
         public function connect(){
             $this->conn = null;
